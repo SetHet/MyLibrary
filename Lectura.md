@@ -1,0 +1,3 @@
+* Docker ignore multiple files
+https://stackoverflow.com/questions/45344158/multiple-dockerignore-files-in-same-directory
+* ...
