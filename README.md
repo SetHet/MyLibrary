@@ -34,7 +34,14 @@ From `Backend/NodeJS/` execute the commands.
 #### Dockerfile
 Commands:
 ```sh
-docker run --rm -it --name mystore-frontend -v "$(pwd)/:/app/" mystore-frontend-angular bash
+# build
+docker build -t mystore-backend-nodejs .
+
+# run 
+docker run --rm -it --name mystore-frontend -v "$(pwd)/:/app/" mystore-backend-nodejs
+
+# run & bash
+docker run --rm -it --name mystore-frontend -v "$(pwd)/:/app/" mystore-backend-nodejs bash
 ```
 
 #### Docker Compose
