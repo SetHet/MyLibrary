@@ -5,5 +5,5 @@ RUN npm install -g @angular/cli
 #COPY ["package.json", "package-lock.json", "/app/"]
 #COPY ["src", "angular.json", "/app/"]
 #RUN npm install --production
-EXPOSE 3000
+EXPOSE 4200
 CMD ["ng", "serve"]
