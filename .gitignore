@@ -1,10 +1,4 @@
-# Custom ===========================
-/config
-*docker-compose.override.yml
-*.env
 
-
-# End Custom ==================================
 # Created by https://www.toptal.com/developers/gitignore/api/windows,linux,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,macos
 
@@ -83,3 +77,12 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos
+
+
+# Custom ===========================
+/config
+*docker-compose.override.yml
+*.env
+
+
+# End Custom ==================================
