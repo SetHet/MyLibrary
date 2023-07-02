@@ -1,6 +1,7 @@
 # Custom ===========================
 /config
 *docker-compose.override.yml
+*.env
 
 
 # End Custom ==================================
