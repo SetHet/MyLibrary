@@ -7,14 +7,14 @@ services:
     - "3001:3000"
     volumes:
       - .:/app/
-    command: tail -f /dev/null
+    command: ng serve
   app-server:
     build: Backend/NodeJS/Dockerfile
     ports:
     - "3000:3000"
     volumes:
       - .:/app/
-    command: tail -f /dev/null
+    command: node index.js
   db:
     image: mongodb
     
