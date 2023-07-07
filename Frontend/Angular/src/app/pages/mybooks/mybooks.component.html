@@ -1,13 +1,21 @@
-<p>mybooks works!</p>
-
-<div class="group-cards">
-    <div class="card">
-        <img class="card-img" src="../../../assets/media/imagen-test.png" alt="imagen">
-        <h2>Nombre</h2>
+<div class="root-search">
+    <div class="search">
+        <form action="/home" method="get">
+            <input class="textbox" type="search" name="" id="" placeholder="Name, Tag, Code...">
+            <input class="button" type="button" value="Search">
+        </form>
     </div>
+</div>
+<div class="root-group-cards">
+    <div>
 
-    <div class="card">
-        <img class="card-img" src="../../../assets/media/imagen-test.png" alt="imagen">
-        <h2>Nombr</h2>
+        <div class="group-cards">
+            
+            <div class="card" *ngFor="let item of books_list" (click)="ClickCard(item.code)">
+                <img class="card-img" src="{{item.img_url}}" alt="imagen">
+                <h2>{{item.name}}</h2>
+            </div>
+            
+        </div>
     </div>
 </div>

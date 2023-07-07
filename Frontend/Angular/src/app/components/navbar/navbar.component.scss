@@ -1,8 +1,11 @@
+@import '../../../styles.scss';
+
 nav {
     height: 50px;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid $color-purple;
     margin: 0;
-    background-color: #ff8400;
+    background-color: $color-orange;
+    color: $color-black;
     
     position: absolute;
     top: 0;

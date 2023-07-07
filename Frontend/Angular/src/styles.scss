@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+$color-white: #fff;
+$color-black: #000;
+$color-orange: #F09C2A;
+$color-yellow: #D9D71A;
+$color-green: #38FF74;
+$color-red: #D91A1D;
+$color-purple: #8428FA;
+
+body {
+    background-color: $color-yellow;
+}
