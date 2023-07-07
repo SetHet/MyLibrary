@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-bookviewer',
   templateUrl: './bookviewer.component.html',
@@ -12,6 +14,7 @@ export class BookviewerComponent implements OnInit{
   ){}
 
   book_code: string = '';
+    img=""
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
