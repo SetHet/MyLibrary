@@ -14,8 +14,22 @@
             height: 100%;
 
             & > .textbox {
-                color: $color-black;
-                background-color: $color-white;
+                color: $color-orange-1;
+                background-color: $color-grey-4;
+                padding-left: 8px;
+                
+                &::placeholder{
+                    color: $color-grey-2;
+                }
+
+                
+                &:focus-visible {
+                    background-color: $color-orange-5;
+                    outline: none; // quita el borde del focus
+                }
+                
+                // color: $color-black;
+                // background-color: $color-white;
                 width: 60vw;
                 height: 100%;
                 border-radius: 10px 0 0 10px;
@@ -23,8 +37,10 @@
             }
             
             & > .button {
-                color: black;
-                background-color: $color-green;
+                color: $color-orange-5;
+                background-color: $color-orange-3;
+                // color: black;
+                // background-color: $color-green;
                 height: 100%;
                 border-radius: 0 10px 10px 0;
                 border: 1px solid black;
@@ -58,8 +74,10 @@
 }
 
 .card {
-    background-color: $color-orange;
-    border: 1px solid $color-purple;
+    background-color: $color-orange-2;
+    border: 1px solid $color-orange-6;
+    // background-color: $color-orange;
+    // border: 1px solid $color-purple;
     border-radius: 10px;
     margin: 10px;
     max-height: 250px;
@@ -74,7 +92,8 @@
 
     &:hover {
         scale: 1.1;
-        box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.343);
+        box-shadow: 2px 4px 5px $color-grey-5;
+        // box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.343);
         cursor: pointer;
         transform: rotate(2deg);
     }
