@@ -1,2 +1,11 @@
-<p>bookviewer code: {{book_code}}</p>
-<img src="{{img}}" alt="asd">
+<div class="container-viewer">
+    <img class="page-img" src="{{paginas[pagina_actual]}}" alt="asd">
+    <div class="button-group">
+        <button (click)="previous_page()">Previous</button>
+        <span>{{pagina_actual+1}} // {{paginas.length}}</span>
+        <button (click)="next_page()">Next</button>
+    </div>
+</div>
+
+
+
