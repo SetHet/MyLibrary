@@ -28,6 +28,13 @@ export class BookviewerComponent implements OnInit{
 
 
   ngOnInit(): void {
+    //multiplicar paginas para pruebas
+    this.paginas = this.paginas.concat(this.paginas);
+    this.paginas = this.paginas.concat(this.paginas);
+    this.paginas = this.paginas.concat(this.paginas);
+    this.paginas = this.paginas.concat(this.paginas);
+
+
     this.route.queryParamMap.subscribe(params => {
       this.book_code = params.get('code') || '';
     })
@@ -38,6 +45,9 @@ export class BookviewerComponent implements OnInit{
     window.document.title = this.book_name;
 
     // cargar paginas necesarias
+
+    // Configurar entradas de teclado
+    this.keyboard_config();
   }
 
   next_page(){
@@ -60,5 +70,20 @@ export class BookviewerComponent implements OnInit{
     // quitar paginas innecesarias
 
     // agregar paginas nuevas necesarias
+  }
+
+  keyboard_config(){
+    document.onkeydown = (e) => {
+      if (!e || e.repeat) { return; }
+
+      switch (e.key) {
+        case 'ArrowLeft':
+          this.previous_page();
+          break;
+        case 'ArrowRight':
+          this.next_page();
+          break;
+      }
+    }
   }
 }
