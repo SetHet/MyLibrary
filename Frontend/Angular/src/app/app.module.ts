@@ -8,6 +8,7 @@ import { BookviewerComponent } from './pages/bookviewer/bookviewer.component';
 import { BookadderComponent } from './pages/bookadder/bookadder.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AngulardocComponent } from './extra/angulardoc/angulardoc.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AngulardocComponent } from './extra/angulardoc/angulardoc.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,26 @@
-<form action="" method="post">
-    <label for="nombre">Nombre documento</label>
-    <input type="text" name="nombre" id="nombre" placeholder="Name the doc">
+<form #myForm="ngForm" method="post">
+    <div class="input-group">
+        <label for="nombre">Nombre documento</label>
+        <input type="text" name="nombre" id="nombre" [(ngModel)]="register.name" placeholder="Name the doc" required>
+    </div>
 
-    <label for="archivo-imagen">Cargar imagen frontal</label>
-    <input type="file" name="archivo-imagen" id="archivo-imagen">
+    <div class="input-group input-files">
+        <label for="archivo-imagen">Cargar imagen frontal</label>
+        <input type="file" name="archivo-imagen" id="archivo-imagen" (change)="onImageChange($event)" required>
+        <img id="imagePreview" src="#" alt="">        
+    </div>
 
-    <label for="archivos">Cargar archivos</label>
-    <input type="file" name="archivos" id="archivos" multiple>
+    <div class="input-group input-files">
+        <label for="archivos">Cargar archivos</label>
+        <input type="file" name="archivos" id="archivos" (change)="onFileChange($event)" multiple required>
+    </div>
 
     
-    <input class="button" type="button" value="Cargar">
+    <input class="button" type="button" value="Cargar" [disabled]="myForm.invalid">
 </form>
+
+<hr>
+<h1>{{register.name}}</h1>
+<h2>{{register.image}}</h2>
+<h3>{{register.files.length}}</h3>
+<h3 *ngFor="let item of register.files">{{item.name}}</h3>
