@@ -6,13 +6,13 @@
 
     <div class="input-group input-files">
         <label for="archivo-imagen">Cargar imagen frontal</label>
-        <input type="file" name="archivo-imagen" id="archivo-imagen" (change)="onImageChange($event)" required>
+        <input type="file" name="archivo-imagen" id="archivo-imagen" (ngModel)="register.image" (change)="onImageChange($event)" required>
         <img id="imagePreview" src="#" alt="">        
     </div>
 
     <div class="input-group input-files">
         <label for="archivos">Cargar archivos</label>
-        <input type="file" name="archivos" id="archivos" (change)="onFileChange($event)" multiple required>
+        <input type="file" name="archivos" id="archivos" (ngModel)="register.image" (change)="onFileChange($event)" multiple required>
     </div>
 
     
