@@ -29,6 +29,9 @@ const optionsCors = {
 }
 
 // use
+// middleware info
+app.use(info)
+
 // cors
 if (dev) {
   app.use(cors())
@@ -38,9 +41,6 @@ if (dev) {
 
 // json
 app.use(express.json())
-
-// middleware info
-app.use(info)
 
 // api routing
 apiRouter(app)
