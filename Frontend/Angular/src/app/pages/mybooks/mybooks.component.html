@@ -10,12 +10,15 @@
     <div>
 
         <div class="group-cards">
-            
+
             <div class="card" *ngFor="let item of books_list" (click)="ClickCard(item.code)">
                 <img class="card-img" src="{{item.img_url}}" alt="imagen">
                 <h2>{{item.name}}</h2>
             </div>
-            
+
         </div>
     </div>
+</div>
+<div>
+  <button (click)="testconnection()">Test Connection</button>
 </div>

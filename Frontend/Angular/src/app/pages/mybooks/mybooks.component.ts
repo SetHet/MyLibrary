@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from '@src/app/services/backend.service';
 
 @Component({
   selector: 'app-mybooks',
@@ -24,6 +25,10 @@ export class MybooksComponent implements OnInit {
     }
   ];
 
+  constructor(
+    private service_backend: BackendService
+  ){}
+
   ngOnInit(): void {
     // Test
     // for (let index = 0; index < 2; index++) {
@@ -33,10 +38,18 @@ export class MybooksComponent implements OnInit {
 
   ClickCard(code: string){
     // cambiar nombre pagina
-    window.document.title = code; 
+    window.document.title = code;
 
     // cambiar pagina
-    window.location.href = '/bookviewer?code='+code; 
-    
+    window.location.href = '/bookviewer?code='+code;
+
+  }
+
+  testconnection() {
+    console.log("test conectioon")
+    this.service_backend.getTest()?.subscribe(data => {
+      //window.prompt(data)
+      console.log(data)
+    })
   }
 }

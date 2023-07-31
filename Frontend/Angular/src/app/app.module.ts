@@ -9,6 +9,7 @@ import { BookadderComponent } from './pages/bookadder/bookadder.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AngulardocComponent } from './extra/angulardoc/angulardoc.component';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
