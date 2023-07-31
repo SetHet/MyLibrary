@@ -9,4 +9,4 @@ GET http://{{host}}
 GET http://{{host}}/api/test
 
 ### Books
-GET http://{{host}}/api/books
+GET http://{{host}}/api/books/list
