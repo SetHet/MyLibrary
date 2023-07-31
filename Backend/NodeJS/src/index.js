@@ -20,7 +20,7 @@ const whitelist = process.env.WHITELIST ?? []
 const optionsCors = {
   origin: (origin, callback) => {
     console.log(origin)
-    if (!origin && whitelist.includes(origin)) {
+    if (origin !== undefined && whitelist.includes(origin)) {
       callback(null, true)
     } else {
       callback(new Error('no permitido'))
