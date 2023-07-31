@@ -3,5 +3,5 @@ module.exports = router
 router.get('/test', test)
 
 function test (req, res) {
-  res.send('test page')
+  res.json({ info: 'test page' })
 }

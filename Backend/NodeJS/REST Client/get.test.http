@@ -1,4 +1,9 @@
-GET http://localhost:50000
+@ip = localhost
+@port = 3000
+@host = {{ip}}:{{port}}
+
+### base
+GET http://{{host}}
 
 ### API
-GET http://localhost:50000/api/test
+GET http://{{host}}/api/test
