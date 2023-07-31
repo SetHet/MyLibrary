@@ -11,8 +11,8 @@
 
         <div class="group-cards">
 
-            <div class="card" *ngFor="let item of books_list" (click)="ClickCard(item.code)">
-                <img class="card-img" src="{{item.img_url}}" alt="imagen">
+            <div class="card" *ngFor="let item of books_list" (click)="ClickCard(item.id)">
+                <img class="card-img" src="{{item.imgURL}}" alt="imagen">
                 <h2>{{item.name}}</h2>
             </div>
 

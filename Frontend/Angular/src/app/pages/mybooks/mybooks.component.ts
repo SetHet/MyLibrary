@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from '@src/app/models/book.model';
 import { BackendService } from '@src/app/services/backend.service';
 
 @Component({
@@ -7,21 +8,21 @@ import { BackendService } from '@src/app/services/backend.service';
   styleUrls: ['./mybooks.component.scss']
 })
 export class MybooksComponent implements OnInit {
-  books_list = [
+  books_list: Book[] = [
     {
       name: "Libro 1",
-      code: "11111",
-      img_url: "../../../assets/media/imagen-test.png",
+      id: "11111",
+      imgURL: "../../../assets/media/imagen-test.png",
     },
     {
       name: "Libro 2",
-      code: "22222",
-      img_url: "../../../assets/media/imagen-test.png",
+      id: "22222",
+      imgURL: "../../../assets/media/imagen-test.png",
     },
     {
       name: "Libro 3",
-      code: "33333",
-      img_url: "../../../assets/media/imagen-test.png",
+      id: "33333",
+      imgURL: "../../../assets/media/imagen-test.png",
     }
   ];
 
@@ -34,6 +35,13 @@ export class MybooksComponent implements OnInit {
     // for (let index = 0; index < 2; index++) {
     //   this.books_list = this.books_list.concat(this.books_list);
     // }
+    this.service_backend.getBooks()?.subscribe(books => {
+      this.books_list = books.data
+      this.books_list.forEach(item => {
+        if (!item.imgURL)
+          item.imgURL = "../../../assets/media/imagen-test.png"
+      })
+    })
   }
 
   ClickCard(code: string){
