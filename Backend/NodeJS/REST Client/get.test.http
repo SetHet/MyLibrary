@@ -7,3 +7,6 @@ GET http://{{host}}
 
 ### API
 GET http://{{host}}/api/test
+
+### Books
+GET http://{{host}}/api/books
