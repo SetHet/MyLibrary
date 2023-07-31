@@ -19,7 +19,6 @@ const port = process.env.PORT ?? 0
 const whitelist = process.env.WHITELIST ?? []
 const optionsCors = {
   origin: (origin, callback) => {
-    console.log(origin)
     if (origin !== undefined && whitelist.includes(origin)) {
       callback(null, true)
     } else {
