@@ -9,17 +9,20 @@ const cors = require('cors')
 require('dotenv').config()
 
 // Modo Dev
-const dev = process.env.DEVMODE === 'true'
+const DEV = process.env.DEVMODE === 'true'
+
+// Modo info
+const INFO = process.env.INFO === 'true'
 
 // config server
 const app = express()
 const port = process.env.PORT ?? 0
 
 // Whitelist
-const whitelist = process.env.WHITELIST ?? []
+const WHITELIST = process.env.WHITELIST ?? []
 const optionsCors = {
   origin: (origin, callback) => {
-    if (origin !== undefined && whitelist.includes(origin)) {
+    if (origin !== undefined && WHITELIST.includes(origin)) {
       callback(null, true)
     } else {
       callback(new Error('no permitido'))
@@ -29,12 +32,14 @@ const optionsCors = {
 
 // use
 // middleware info
-app.use(info)
+if (INFO) app.use(info)
 
 // cors
-if (dev) {
+if (WHITELIST.includes('0.0.0.0')) {
+  if (INFO) console.log('Mode: public')
   app.use(cors())
 } else {
+  if (INFO) console.log('Mode: whitelist')
   app.use(cors(optionsCors))
 }
 
@@ -51,5 +56,5 @@ app.get('/', (req, res) => {
 
 // listen server
 const server = app.listen(port, () => {
-  console.log(`Server Init: http://localhost:${server.address().port}`)
+  if (INFO) console.log(`Server Init: http://localhost:${server.address().port}`)
 })
